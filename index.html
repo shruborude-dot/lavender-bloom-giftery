@@ -171,6 +171,40 @@ function payNow(){
   window.location.href = "upi://pay?pa=8999827106@upi&pn=Lavender%20Bloom&cu=INR";
 }
 </script>
+<!-- FLOATING BUTTONS -->
+<style>
+.floating-btn {
+  position: fixed;
+  right: 15px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 26px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+.whatsapp {
+  bottom: 90px;
+  background: #25D366;
+}
+.instagram {
+  bottom: 20px;
+  background: #C13584;
+}
+</style>
+
+<a class="floating-btn whatsapp"
+   href="https://wa.me/918999827106?text=Hi%20Lavender%20Bloom%20Giftery%20💜%20I%20want%20to%20place%20an%20order"
+   target="_blank">💬</a>
+
+<a class="floating-btn instagram"
+   href="https://www.instagram.com/"
+   target="_blank">📷</a>
 
 </body>
 </html>
