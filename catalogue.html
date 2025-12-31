@@ -57,7 +57,7 @@
   <div class="product">
     <img src="bracelet.jpg">
     <p>Bracelet – ₹80</p>
-    <button class="btn" onclick="addToCart('Bracelet – 80')">
+    <button class="btn" onclick="addToCart(Bracelet, 80)">
   Add to Cart
 </button>
 
@@ -66,7 +66,7 @@
   <div class="product">
     <img src="lipgloss.jpg">
     <p>Lip Gloss – ₹60</p>
-    <button onclick="addToCart('Lip gloss – 60')">
+    <button onclick="addToCart(Lipgloss ,60)">
   Add to Cart
 </button>
 
@@ -75,7 +75,7 @@
   <div class="product">
     <img src="pendant.jpg">
     <p>Pendant – ₹50</p>
-    <button onclick="addToCart('Pendant – 50')">
+    <button onclick="addToCart(Pendant , 50)">
   Add to Cart
 </button>
 
@@ -84,7 +84,7 @@
   <div class="product">
     <img src="scrunchie.jpg">
     <p>Scrunchie – ₹25</p>
-    <button onclick="addToCart('Scrunchie – 25')">
+    <button onclick="addToCart(Scrunchie , 25)">
   Add to Cart
 </button>
 
@@ -142,7 +142,7 @@
   <div class="product">
     <img src="flowerclip.jpg">
     <p>Flower clip – ₹20</p>
-    <button onclick="addToCart('Flower Clip – 20')">
+    <button onclick="addToCart('Flower Clip – 20)">
   Add to Cart
 </button>
 
@@ -160,7 +160,7 @@
   <div class="product">
     <img src="tulipbow.jpg">
     <p>Tulip bow – ₹45</p>
-    <button onclick="addToCart('Tulip bow – 45')">
+    <button onclick="addToCart(Tulip bow , 45')">
   Add to Cart
 </button>
 
@@ -169,7 +169,7 @@
   <div class="product">
     <img src="flowerscrunchie.jpg">
     <p>Flower scrunchie – ₹40</p>
-    <button onclick="addToCart('Flower scrunchie – 40')">
+    <button onclick="addToCart(Flower scrunchie , 40')">
   Add to Cart
 </button>
 
@@ -178,7 +178,7 @@
   <div class="product">
     <img src="tuliplace.jpg">
     <p>Tulip lace bow – ₹45</p>
-    <button onclick="addToCart('Tulip lace bow – 45')">
+    <button onclick="addToCart(Tuliplacebow , 45)">
   Add to Cart
 </button>
 
@@ -187,7 +187,7 @@
   <div class="product">
     <img src="acrylic.jpg">
     <p>Acrylic flower clip – ₹35</p>
-    <button onclick="addToCart('Acrylic flower clip - 35')">
+    <button onclick="addToCart(Acrylicflowerclip , 35)">
   Add to Cart
     </button>
 
@@ -196,7 +196,7 @@
   <div class="product">
     <img src="blackstud.jpg">
     <p>Black stud – ₹35</p>
-    <button onclick="addToCart('Black stud - 35')">
+    <button onclick="addToCart(Blackstud , 35)">
   Add to Cart
       </button>
 
@@ -205,7 +205,7 @@
   <div class="product">
     <img src="cork.jpg">
     <p>Cork – ₹30</p>
-    <button onclick="addToCart('Cork - 30')">
+    <button onclick="addToCart(Cork ,30)">
   Add to Cart
 </button>
 
@@ -214,7 +214,7 @@
   <div class="product">
     <img src="bowstud.jpg">
     <p>Bow stud – ₹30</p>
-    <button onclick="addToCart('Bow stud– 30')">
+    <button onclick="addToCart(Bowstud ,30)">
   Add to Cart
     </button>
 
@@ -223,7 +223,7 @@
   <div class="product">
     <img src="charm.jpg">
     <p>Charm bracelet – ₹30</p>
-    <button onclick="addToCart('Charm bracelet - 30')">
+    <button onclick="addToCart(Charmbracelet ,30)">
   Add to Cart
 </button>
 
@@ -376,6 +376,19 @@ function checkout() {
   msg += `%0ATotal: ₹${total}%0AThank you 💜`;
 
   window.open("https://wa.me/918999827106?text=" + msg);
+}
+</script>
+<script>
+let cart = [];
+
+function addToCart(name, price) {
+  let item = cart.find(p => p.name === name);
+  if (item) {
+    item.qty++;
+  } else {
+    cart.push({ name, price, qty: 1 });
+  }
+  alert(name + " added to cart 💜");
 }
 </script>
 
