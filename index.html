@@ -18,7 +18,8 @@ h1, h2 {
       text-align: center;
       padding: 20px;
     }
-    nav {
+  
+      nav {
       display: flex;
       justify-content: center;
       gap: 20px;
@@ -47,7 +48,18 @@ h1, h2 {
       text-align: center;
       padding: 20px;
     }
+    .cart-btn {
+  background: #8e6ac8;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
   </style>
+
 </head>
 <body>
 
@@ -55,6 +67,8 @@ h1, h2 {
   <h1>Lavender Bloom Giftery 🌸</h1>
   <p>Where gifts bloom with love 💜</p>
 </header>
+  
+<button onclick="openCart()" class="cart-btn">🛒 View Cart</button>
 
 <nav>
   <a href="index.html">Home</a>
