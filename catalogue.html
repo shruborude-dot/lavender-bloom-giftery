@@ -66,7 +66,7 @@
   <div class="product">
     <img src="lipgloss.jpg">
     <p>Lip Gloss – ₹60</p>
-    <button class="btn" onclick="addToCart('Lip gloss – ₹60')">
+    <button onclick="addToCart('Lip gloss – ₹60')">
   Add to Cart
 </button>
 
@@ -75,7 +75,7 @@
   <div class="product">
     <img src="pendant.jpg">
     <p>Pendant – ₹50</p>
-    <button class="btn" onclick="addToCart('Pendant – ₹50')">
+    <button onclick="addToCart('Pendant – ₹50')">
   Add to Cart
 </button>
 
@@ -84,7 +84,7 @@
   <div class="product">
     <img src="scrunchie.jpg">
     <p>Scrunchie – ₹25</p>
-    <button class="btn" onclick="addToCart('Scrunchie – ₹25')">
+    <button onclick="addToCart('Scrunchie – ₹25')">
   Add to Cart
 </button>
 
@@ -145,7 +145,7 @@
   <div class="product">
     <img src="flowerclip.jpg">
     <p>Flower clip – ₹20</p>
-    <button class="btn" onclick="addToCart('Flower Clip – ₹20')">
+    <button onclick="addToCart('Flower Clip – ₹20')">
   Add to Cart
 </button>
 
@@ -154,7 +154,7 @@
   <div class="product">
     <img src="flowerclaw.jpg">
     <p>Flower claw clip– ₹35</p>
-    <button class="btn" onclick="addToCart('Flower claw clip – ₹35')">
+    <button onclick="addToCart('Flower claw clip – ₹35')">
   Add to Cart
 </button>
 
@@ -163,7 +163,7 @@
   <div class="product">
     <img src="tulipbow.jpg">
     <p>Tulip bow – ₹45</p>
-    <button class="btn" onclick="addToCart('Tulip bow – ₹45')">
+    <button onclick="addToCart('Tulip bow – ₹45')">
   Add to Cart
 </button>
 
@@ -172,7 +172,7 @@
   <div class="product">
     <img src="flowerscrunchie.jpg">
     <p>Flower scrunchie – ₹40</p>
-    <button class="btn" onclick="addToCart('Flower scrunchie – ₹40')">
+    <button onclick="addToCart('Flower scrunchie – ₹40')">
   Add to Cart
 </button>
 
@@ -181,7 +181,7 @@
   <div class="product">
     <img src="tuliplace.jpg">
     <p>Tulip lace bow – ₹45</p>
-    <button class="btn" onclick="addToCart('Tulip lace bow – ₹45')">
+    <button onclick="addToCart('Tulip lace bow – ₹45')">
   Add to Cart
 </button>
 
@@ -190,7 +190,7 @@
   <div class="product">
     <img src="acrylic.jpg">
     <p>Acrylic flower clip – ₹35</p>
-    <button class="btn" onclick="addToCart('Acrylic flower clip - ₹35')">
+    <button onclick="addToCart('Acrylic flower clip - ₹35')">
   Add to Cart
     </button>
 
@@ -199,7 +199,7 @@
   <div class="product">
     <img src="blackstud.jpg">
     <p>Black stud – ₹35</p>
-    <button class="btn" onclick="addToCart('Black stud - ₹35')">
+    <button onclick="addToCart('Black stud - ₹35')">
   Add to Cart
       </button>
 
@@ -208,7 +208,7 @@
   <div class="product">
     <img src="cork.jpg">
     <p>Cork – ₹30</p>
-    <button class="btn" onclick="addToCart('Cork - ₹30')">
+    <button onclick="addToCart('Cork - ₹30')">
   Add to Cart
 </button>
 
@@ -217,7 +217,7 @@
   <div class="product">
     <img src="bowstud.jpg">
     <p>Bow stud – ₹30</p>
-    <button class="btn" onclick="addToCart('Bow stud– ₹30')">
+    <button onclick="addToCart('Bow stud– ₹30')">
   Add to Cart
     </button>
 
@@ -226,7 +226,7 @@
   <div class="product">
     <img src="charm.jpg">
     <p>Charm bracelet – ₹30</p>
-    <button class="btn" onclick="addToCart('Charm bracelet - ₹30')">
+    <button onclick="addToCart('Charm bracelet - ₹30')">
   Add to Cart
 </button>
 
@@ -253,6 +253,146 @@ function checkout() {
 <a class="btn" href="upi://pay?pa=8999827106@upi&pn=Lavender Bloom Giftery&cu=INR">
   Pay via UPI
 </a>
+  <div id="cart" style="display:none; position:fixed; bottom:20px; right:20px; background:#fff; padding:15px; border-radius:12px; width:250px; box-shadow:0 0 10px rgba(0,0,0,0.2)">
+  <h3>Your Cart</h3>
+  <ul id="cartItems"></ul>
+  <p><strong>Total: ₹<span id="total">0</span></strong></p>
+  <button onclick="orderWhatsApp()">Order on WhatsApp</button>
+  <button onclick="closeCart()">Close</button>
+</div>
+<script>
+let cart = [];
+let total = 0;
+
+function addToCart(name, price) {
+  cart.push({name, price});
+  total += price;
+  alert(name + " added to cart");
+}
+
+function openCart() {
+  document.getElementById("cart").style.display = "block";
+  let list = document.getElementById("cartItems");
+  list.innerHTML = "";
+  cart.forEach(item => {
+    let li = document.createElement("li");
+    li.innerText = item.name + " - ₹" + item.price;
+    list.appendChild(li);
+  });
+  document.getElementById("total").innerText = total;
+}
+
+function closeCart() {
+  document.getElementById("cart").style.display = "none";
+}
+
+function orderWhatsApp() {
+  let msg = "Hello Lavender Bloom Giftery,%0AOrder Details:%0A";
+  cart.forEach(i => msg += i.name + " - ₹" + i.price + "%0A");
+  msg += "Total: ₹" + total;
+  window.open("https://wa.me/918999827106?text=" + msg);
+}
+</script>
+<div id="cartBox" style="
+  display:none;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:white;
+  padding:15px;
+  border-radius:15px;
+  width:280px;
+  box-shadow:0 0 10px rgba(0,0,0,0.2);
+  z-index:1000;
+">
+  <h3>Your Cart 💜</h3>
+  <div id="cartItems"></div>
+  <p><strong>Total: ₹<span id="total">0</span></strong></p>
+  <button onclick="checkout()" style="margin-right:10px;">Order</button>
+  <button onclick="closeCart()">Close</button>
+</div>
+<script>
+let cart = [];
+
+function addToCart(name, price) {
+  let item = cart.find(p => p.name === name);
+  if (item) {
+    item.qty++;
+  } else {
+    cart.push({name, price, qty: 1});
+  }
+  alert(name + " added to cart 💜");
+}
+
+function openCart() {
+  document.getElementById("cartBox").style.display = "block";
+  renderCart();
+}
+
+function closeCart() {
+  document.getElementById("cartBox").style.display = "none";
+}
+
+function increaseQty(index) {
+  cart[index].qty++;
+  renderCart();
+}
+
+function decreaseQty(index) {
+  if (cart[index].qty > 1) {
+    cart[index].qty--;
+  } else {
+    cart.splice(index, 1);
+  }
+  renderCart();
+}
+
+function renderCart() {
+  let cartDiv = document.getElementById("cartItems");
+  let total = 0;
+  cartDiv.innerHTML = "";
+
+  cart.forEach((item, index) => {
+    total += item.price * item.qty;
+    cartDiv.innerHTML += `
+      <div style="margin-bottom:10px;">
+        <strong>${item.name}</strong><br>
+        ₹${item.price} × ${item.qty}<br>
+        <button onclick="decreaseQty(${index})">➖</button>
+        <button onclick="increaseQty(${index})">➕</button>
+      </div>
+    `;
+  });
+
+  document.getElementById("total").innerText = total;
+}
+
+function checkout() {
+  let msg = "Hello Lavender Bloom Giftery 🌸%0A%0AOrder Details:%0A";
+  let total = 0;
+
+  cart.forEach(item => {
+    msg += `${item.name} × ${item.qty} = ₹${item.price * item.qty}%0A`;
+    total += item.price * item.qty;
+  });
+
+  msg += `%0ATotal: ₹${total}%0AThank you 💜`;
+
+  window.open("https://wa.me/918999827106?text=" + msg);
+}
+</script>
 
   </body>
+  <button onclick="openCart()" style="
+  position:fixed;
+  top:15px;
+  right:15px;
+  background:#7b4ea3;
+  color:white;
+  border:none;
+  padding:10px 15px;
+  border-radius:20px;
+  z-index:999;
+">🛒 View Cart</button>
+
   </html>
