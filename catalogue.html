@@ -1,28 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Catalogue | Lavender Bloom Giftery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
     body {
-      <div id="cart-box">
-  🛒 Cart: <span id="cart-count">0</span> items
-  <br><br>
-  <button class="btn" onclick="checkout()">Checkout</button>
-</div>
-
-      font-family: Arial;
+      font-family: 'Poppins', Arial, sans-serif;
       background: #f9f5ff;
       margin: 0;
+      padding: 0;
     }
     h2 {
       text-align: center;
       padding: 20px;
+      font-family: 'Pacifico', cursive;
     }
     .products {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 15px;
       padding: 15px;
     }
@@ -45,6 +41,39 @@
       border-radius: 20px;
       text-decoration: none;
       font-size: 14px;
+      cursor: pointer;
+    }
+    /* Cart Popup */
+    #cartBox {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 15px;
+      width: 280px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    #cartBox button {
+      margin-top: 5px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #viewCartBtn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: #7b4ea3;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 20px;
+      z-index: 999;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -55,259 +84,80 @@
 <div class="products">
 
   <div class="product">
-    <img src="bracelet.jpg">
+    <img src="bracelet.jpg" alt="Bracelet">
     <p>Bracelet – ₹80</p>
-    <button onclick="addToCart(Bracelet, ₹80)">
-  Add to Cart
-</button>
-
+    <button class="btn" onclick="addToCart('Bracelet', 80)">Add to Cart</button>
   </div>
 
   <div class="product">
-    <img src="lipgloss.jpg">
+    <img src="lipgloss.jpg" alt="Lip Gloss">
     <p>Lip Gloss – ₹60</p>
-    <button onclick="addToCart(Lipgloss ,60)">
-  Add to Cart
-</button>
-
+    <button class="btn" onclick="addToCart('Lip Gloss', 60)">Add to Cart</button>
   </div>
 
   <div class="product">
-    <img src="pendant.jpg">
+    <img src="pendant.jpg" alt="Pendant">
     <p>Pendant – ₹50</p>
-    <button onclick="addToCart(Pendant , 50)">
-  Add to Cart
-</button>
-
+    <button class="btn" onclick="addToCart('Pendant', 50)">Add to Cart</button>
   </div>
 
   <div class="product">
-    <img src="scrunchie.jpg">
+    <img src="scrunchie.jpg" alt="Scrunchie">
     <p>Scrunchie – ₹25</p>
-    <button onclick="addToCart(Scrunchie , 25)">
-  Add to Cart
-</button>
+    <button class="btn" onclick="addToCart('Scrunchie', 25)">Add to Cart</button>
+  </div>
 
+  <div class="product">
+    <img src="flowerclip.jpg" alt="Flower Clip">
+    <p>Flower Clip – ₹20</p>
+    <button class="btn" onclick="addToCart('Flower Clip', 20)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="flowerclaw.jpg" alt="Flower Claw Clip">
+    <p>Flower Claw Clip – ₹35</p>
+    <button class="btn" onclick="addToCart('Flower Claw Clip', 35)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="tulipbow.jpg" alt="Tulip Bow">
+    <p>Tulip Bow – ₹45</p>
+    <button class="btn" onclick="addToCart('Tulip Bow', 45)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="flowerscrunchie.jpg" alt="Flower Scrunchie">
+    <p>Flower Scrunchie – ₹40</p>
+    <button class="btn" onclick="addToCart('Flower Scrunchie', 40)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="tuliplace.jpg" alt="Tulip Lace Bow">
+    <p>Tulip Lace Bow – ₹45</p>
+    <button class="btn" onclick="addToCart('Tulip Lace Bow', 45)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="acrylic.jpg" alt="Acrylic Flower Clip">
+    <p>Acrylic Flower Clip – ₹35</p>
+    <button class="btn" onclick="addToCart('Acrylic Flower Clip', 35)">Add to Cart</button>
   </div>
 
 </div>
 
-</body>
-</html>
- <!DOCTYPE html>
-<html>
-<head>
-  <title>Catalogue | Lavender Bloom Giftery</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #f9f5ff;
-      margin: 0;
-    }
-    h2 {
-      text-align: center;
-      padding: 20px;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      padding: 15px;
-    }
-    .product {
-      background: white;
-      padding: 10px;
-      border-radius: 15px;
-      text-align: center;
-    }
-    .product img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 8px;
-      background: #7b4ea3;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
+<!-- View Cart Button -->
+<button id="viewCartBtn" onclick="openCart()">🛒 View Cart</button>
 
-
-  <div class="product">
-    <img src="flowerclip.jpg">
-    <p>Flower clip – ₹20</p>
-    <button onclick="addToCart('Flower Clip – 20)">
-  Add to Cart
-</button>
-
-  </div>
-
-  <div class="product">
-    <img src="flowerclaw.jpg">
-    <p>Flower claw clip– ₹35</p>
-    <button onclick="addToCart('Flower claw clip – 35')">
-  Add to Cart
-</button>
-
-  </div>
-
-  <div class="product">
-    <img src="tulipbow.jpg">
-    <p>Tulip bow – ₹45</p>
-    <button onclick="addToCart(Tulip bow , 45')">
-  Add to Cart
-</button>
-
-  </div>
-
-  <div class="product">
-    <img src="flowerscrunchie.jpg">
-    <p>Flower scrunchie – ₹40</p>
-    <button onclick="addToCart(Flower scrunchie , 40')">
-  Add to Cart
-</button>
-
-  </div>
-
-  <div class="product">
-    <img src="tuliplace.jpg">
-    <p>Tulip lace bow – ₹45</p>
-    <button onclick="addToCart(Tuliplacebow , 45)">
-  Add to Cart
-</button>
-
-  </div>
-  
-  <div class="product">
-    <img src="acrylic.jpg">
-    <p>Acrylic flower clip – ₹35</p>
-    <button onclick="addToCart(Acrylicflowerclip , 35)">
-  Add to Cart
-    </button>
-
-  </div>
-  
-  <div class="product">
-    <img src="blackstud.jpg">
-    <p>Black stud – ₹35</p>
-    <button onclick="addToCart(Blackstud , 35)">
-  Add to Cart
-      </button>
-
-  </div>
-
-  <div class="product">
-    <img src="cork.jpg">
-    <p>Cork – ₹30</p>
-    <button onclick="addToCart(Cork ,30)">
-  Add to Cart
-</button>
-
-  </div>
-
-  <div class="product">
-    <img src="bowstud.jpg">
-    <p>Bow stud – ₹30</p>
-    <button onclick="addToCart(Bowstud ,30)">
-  Add to Cart
-    </button>
-
-  </div>
-
-  <div class="product">
-    <img src="charm.jpg">
-    <p>Charm bracelet – ₹30</p>
-    <button onclick="addToCart(Charmbracelet ,30)">
-  Add to Cart
-</button>
-
-  </div>
-  <script>
-let cart = [];
-
-function addToCart(item) {
-  cart.push(item);
-  document.getElementById("cart-count").innerText = cart.length;
-  alert(item + " added to cart 💜");
-}
-
-function checkout() {
-  let message = "Hello Lavender Bloom Giftery 🌸%0A%0AI want to order:%0A";
-  cart.forEach((item, index) => {
-    message += (index + 1) + ". " + item + "%0A";
-  });
-  message += "%0AThank you 💜";
-
-  window.open("https://wa.me/918999827106?text=" + message, "_blank");
-}
-</script>
-<a class="btn" href="upi://pay?pa=8999827106@upi&pn=Lavender Bloom Giftery&cu=INR">
-  Pay via UPI
-</a>
-  <div id="cart" style="display:none; position:fixed; bottom:20px; right:20px; background:#fff; padding:15px; border-radius:12px; width:250px; box-shadow:0 0 10px rgba(0,0,0,0.2)">
-  <h3>Your Cart</h3>
-  <ul id="cartItems"></ul>
-  <p><strong>Total: ₹<span id="total">0</span></strong></p>
-  <button onclick="orderWhatsApp()">Order on WhatsApp</button>
-  <button onclick="closeCart()">Close</button>
-</div>
-<script>
-let cart = [];
-let total = 0;
-
-function addToCart(name, price) {
-  cart.push({name, price});
-  total += price;
-  alert(name + " added to cart");
-}
-
-function openCart() {
-  document.getElementById("cart").style.display = "block";
-  let list = document.getElementById("cartItems");
-  list.innerHTML = "";
-  cart.forEach(item => {
-    let li = document.createElement("li");
-    li.innerText = item.name + " - ₹" + item.price;
-    list.appendChild(li);
-  });
-  document.getElementById("total").innerText = total;
-}
-
-function closeCart() {
-  document.getElementById("cart").style.display = "none";
-}
-
-function orderWhatsApp() {
-  let msg = "Hello Lavender Bloom Giftery,%0AOrder Details:%0A";
-  cart.forEach(i => msg += i.name + " - ₹" + i.price + "%0A");
-  msg += "Total: ₹" + total;
-  window.open("https://wa.me/918999827106?text=" + msg);
-}
-</script>
-<div id="cartBox" style="
-  display:none;
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:white;
-  padding:15px;
-  border-radius:15px;
-  width:280px;
-  box-shadow:0 0 10px rgba(0,0,0,0.2);
-  z-index:1000;
-">
+<!-- Cart Popup -->
+<div id="cartBox">
   <h3>Your Cart 💜</h3>
   <div id="cartItems"></div>
   <p><strong>Total: ₹<span id="total">0</span></strong></p>
-  <button onclick="checkout()" style="margin-right:10px;">Order</button>
-  <button onclick="closeCart()">Close</button>
+  <button onclick="checkout()" style="background:#7b4ea3; color:white;">Order on WhatsApp</button>
+  <button onclick="closeCart()" style="background:#ccc;">Close</button>
+  <a class="btn" href="upi://pay?pa=8999827106@upi&pn=Lavender Bloom Giftery&cu=INR" style="display:block; margin-top:10px;">Pay via UPI</a>
 </div>
+
 <script>
 let cart = [];
 
@@ -316,18 +166,28 @@ function addToCart(name, price) {
   if (item) {
     item.qty++;
   } else {
-    cart.push({name, price, qty: 1});
+    cart.push({ name, price, qty: 1 });
   }
   alert(name + " added to cart 💜");
-}
-
-function openCart() {
-  document.getElementById("cartBox").style.display = "block";
   renderCart();
 }
 
-function closeCart() {
-  document.getElementById("cartBox").style.display = "none";
+function renderCart() {
+  let cartDiv = document.getElementById("cartItems");
+  let total = 0;
+  cartDiv.innerHTML = "";
+  cart.forEach((item, index) => {
+    total += item.price * item.qty;
+    cartDiv.innerHTML += `
+      <div style="margin-bottom:10px;">
+        <strong>${item.name}</strong><br>
+        ₹${item.price} × ${item.qty}<br>
+        <button onclick="decreaseQty(${index})">➖</button>
+        <button onclick="increaseQty(${index})">➕</button>
+      </div>
+    `;
+  });
+  document.getElementById("total").innerText = total;
 }
 
 function increaseQty(index) {
@@ -344,65 +204,29 @@ function decreaseQty(index) {
   renderCart();
 }
 
-function renderCart() {
-  let cartDiv = document.getElementById("cartItems");
-  let total = 0;
-  cartDiv.innerHTML = "";
+function openCart() {
+  document.getElementById("cartBox").style.display = "block";
+}
 
-  cart.forEach((item, index) => {
-    total += item.price * item.qty;
-    cartDiv.innerHTML += `
-      <div style="margin-bottom:10px;">
-        <strong>${item.name}</strong><br>
-        ₹${item.price} × ${item.qty}<br>
-        <button onclick="decreaseQty(${index})">➖</button>
-        <button onclick="increaseQty(${index})">➕</button>
-      </div>
-    `;
-  });
-
-  document.getElementById("total").innerText = total;
+function closeCart() {
+  document.getElementById("cartBox").style.display = "none";
 }
 
 function checkout() {
+  if(cart.length === 0){
+    alert("Your cart is empty 💜");
+    return;
+  }
   let msg = "Hello Lavender Bloom Giftery 🌸%0A%0AOrder Details:%0A";
   let total = 0;
-
   cart.forEach(item => {
     msg += `${item.name} × ${item.qty} = ₹${item.price * item.qty}%0A`;
     total += item.price * item.qty;
   });
-
   msg += `%0ATotal: ₹${total}%0AThank you 💜`;
-
-  window.open("https://wa.me/918999827106?text=" + msg);
-}
-</script>
-<script>
-let cart = [];
-
-function addToCart(name, price) {
-  let item = cart.find(p => p.name === name);
-  if (item) {
-    item.qty++;
-  } else {
-    cart.push({ name, price, qty: 1 });
-  }
-  alert(name + " added to cart 💜");
+  window.open("https://wa.me/918999827106?text=" + msg, "_blank");
 }
 </script>
 
-  </body>
-  <button onclick="openCart()" style="
-  position:fixed;
-  top:15px;
-  right:15px;
-  background:#7b4ea3;
-  color:white;
-  border:none;
-  padding:10px 15px;
-  border-radius:20px;
-  z-index:999;
-">🛒 View Cart</button>
-
-  </html>
+</body>
+</html>
