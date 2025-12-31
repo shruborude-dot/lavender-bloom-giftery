@@ -1,182 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lavender Bloom Giftery</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lavender Bloom Giftery</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', Arial, sans-serif;
-      background: #f9f6fb;
-      color: #333;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #f9f6fb;
+  color: #333;
+}
 
-    /* NAVBAR */
-    nav {
-      background: #ffffff;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+/* NAVBAR */
+nav {
+  background: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav h2 { color: #8c6bb1; margin: 0; }
+nav a {
+  text-decoration: none;
+  color: #555;
+  margin-left: 15px;
+  font-weight: 500;
+}
 
-    nav h2 {
-      color: #b497d6;
-      margin: 0;
-    }
+/* HERO */
+header {
+  text-align: center;
+  padding: 70px 20px;
+  background: linear-gradient(135deg,#e9dcf5,#ffffff);
+}
+header h1 { color: #8c6bb1; }
+header p { max-width: 500px; margin: auto; }
 
-    nav a {
-      text-decoration: none;
-      color: #555;
-      margin-left: 15px;
-      font-weight: 500;
-    }
+/* PRODUCTS */
+section { padding: 40px 20px; }
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+  gap: 20px;
+}
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
+.card h4 { margin: 10px 0 5px; font-size: 15px; }
+.card p { margin: 0; font-weight: bold; color: #8c6bb1; }
+.card button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  background: #b497d6;
+  color: #fff;
+  cursor: pointer;
+}
 
-    /* HERO */
-    header {
-      text-align: center;
-      padding: 70px 20px;
-      background: linear-gradient(135deg, #e9dcf5, #fdfbff);
-    }
+/* CART */
+#cart {
+  max-width: 500px;
+  margin: auto;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
 
-    header h1 {
-      color: #8c6bb1;
-      font-size: 36px;
-    }
-
-    header p {
-      font-size: 16px;
-      max-width: 500px;
-      margin: auto;
-    }
-
-    /* PRODUCTS */
-    section {
-      padding: 40px 20px;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    .card h4 {
-      margin: 10px 0 5px;
-      font-size: 15px;
-    }
-
-    .card p {
-      margin: 0;
-      font-weight: bold;
-      color: #8c6bb1;
-    }
-
-    .card button {
-      margin-top: 10px;
-      padding: 8px 14px;
-      border: none;
-      border-radius: 20px;
-      background: #b497d6;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #efe7f6;
-      font-size: 14px;
-    }
-  </style>
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #efe7f6;
+  font-size: 14px;
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-  <h2>Lavender Bloom</h2>
-  <div>
-    <a href="#home">Home</a>
-    <a href="#catalogue">Catalogue</a>
-    <a href="#contact">Contact</a>
-  </div>
+<h2>Lavender Bloom</h2>
+<div>
+<a href="#home">Home</a>
+<a href="#catalogue">Catalogue</a>
+<a href="#cart">Cart</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
 <header id="home">
-  <h1>Lavender Bloom Giftery 🌸</h1>
-  <p>Soft pastel gifts, curated with love. Perfect for birthdays, surprises & special moments.</p>
+<h1>Lavender Bloom Giftery 🌸</h1>
+<p>Soft pastel gifts curated with love for every special moment.</p>
 </header>
 
 <section id="catalogue">
-  <h2 style="text-align:center; color:#8c6bb1;">Our Catalogue</h2>
+<h2 style="text-align:center;color:#8c6bb1;">Our Catalogue</h2>
 
-  <div class="products">
+<div class="products">
 
-    <div class="card">
-      <img src="charm.jpg">
-      <h4>Charm Bracelet</h4>
-      <p>₹30</p>
-      <button onclick="pay()">Add to Cart</button>
-    </div>
+<div class="card"><img src="charm.jpg"><h4>Charm Bracelet</h4><p>₹30</p><button onclick="addToCart('Charm Bracelet',30)">Add to Cart</button></div>
+<div class="card"><img src="flowerclaw.jpg"><h4>Flower Hair Claw</h4><p>₹20</p><button onclick="addToCart('Flower Hair Claw',20)">Add to Cart</button></div>
+<div class="card"><img src="flowerclip.jpg"><h4>Flower Hair Clip</h4><p>₹35</p><button onclick="addToCart('Flower Hair Clip',35)">Add to Cart</button></div>
+<div class="card"><img src="tuliplace.jpg"><h4>Tulip Lace Bow</h4><p>₹45</p><button onclick="addToCart('Tulip Lace Bow',45)">Add to Cart</button></div>
+<div class="card"><img src="tulipbow.jpg"><h4>Tulip Hair Bow</h4><p>₹45</p><button onclick="addToCart('Tulip Hair Bow',45)">Add to Cart</button></div>
+<div class="card"><img src="scrunchie.jpg"><h4>Scrunchie</h4><p>₹25</p><button onclick="addToCart('Scrunchie',25)">Add to Cart</button></div>
+<div class="card"><img src="cork.jpg"><h4>Cork Light</h4><p>₹30</p><button onclick="addToCart('Cork Light',30)">Add to Cart</button></div>
+<div class="card"><img src="blackstud.jpg"><h4>Black Stud Earrings</h4><p>₹35</p><button onclick="addToCart('Black Stud Earrings',35)">Add to Cart</button></div>
+<div class="card"><img src="pendant.jpg"><h4>Pendant + Earrings</h4><p>₹50</p><button onclick="addToCart('Pendant + Earrings',50)">Add to Cart</button></div>
+<div class="card"><img src="acrylic.jpg"><h4>Acrylic Flower Clip</h4><p>₹35</p><button onclick="addToCart('Acrylic Flower Clip',35)">Add to Cart</button></div>
+<div class="card"><img src="flowerscrunchie.jpg"><h4>Flower Scrunchie</h4><p>₹40</p><button onclick="addToCart('Flower Scrunchie',40)">Add to Cart</button></div>
+<div class="card"><img src="bowstud.jpg"><h4>Bow Stud Earrings</h4><p>₹30</p><button onclick="addToCart('Bow Stud Earrings',30)">Add to Cart</button></div>
+<div class="card"><img src="lipgloss.jpg"><h4>Lip Gloss</h4><p>₹60</p><button onclick="addToCart('Lip Gloss',60)">Add to Cart</button></div>
+<div class="card"><img src="bracelet.jpg"><h4>Bracelet</h4><p>₹80</p><button onclick="addToCart('Bracelet',80)">Add to Cart</button></div>
 
-    <div class="card">
-      <img src="flowerclaw.jpg">
-      <h4>Flower Hair Claw</h4>
-      <p>₹20</p>
-      <button onclick="pay()">Add to Cart</button>
-    </div>
+</div>
+</section>
 
-    <div class="card">
-      <img src="scrunchie.jpg">
-      <h4>Scrunchie</h4>
-      <p>₹25</p>
-      <button onclick="pay()">Add to Cart</button>
-    </div>
-
-    <div class="card">
-      <img src="lipgloss.jpg">
-      <h4>Lip Gloss</h4>
-      <p>₹60</p>
-      <button onclick="pay()">Add to Cart</button>
-    </div>
-
-  </div>
+<section id="cart">
+<h2 style="text-align:center;color:#8c6bb1;">Your Cart</h2>
+<div id="cartItems"></div>
+<h3 style="text-align:center;">Total: ₹<span id="total">0</span></h3>
+<div style="text-align:center;">
+<button onclick="payNow()" style="padding:10px 20px;border:none;border-radius:25px;background:#8c6bb1;color:white;">Pay Now</button>
+</div>
 </section>
 
 <section id="contact">
-  <h2 style="text-align:center; color:#8c6bb1;">Contact</h2>
-  <p style="text-align:center;">DM us on Instagram or pay via UPI to place your order 💜</p>
-  <p style="text-align:center;"><strong>UPI:</strong> 8999827106</p>
+<h2 style="text-align:center;color:#8c6bb1;">Contact</h2>
+<p style="text-align:center;">UPI Payment: <strong>8999827106</strong></p>
 </section>
 
 <footer>
-  © 2025 Lavender Bloom Giftery | Made with 💜
+© 2025 Lavender Bloom Giftery 💜
 </footer>
 
 <script>
-  function pay() {
-    window.location.href = "upi://pay?pa=8999827106@upi&pn=Lavender%20Bloom&cu=INR";
-  }
+let cart = [];
+function addToCart(name, price){
+  cart.push({name, price});
+  renderCart();
+}
+function renderCart(){
+  let items = document.getElementById("cartItems");
+  let total = 0;
+  items.innerHTML = "";
+  cart.forEach(item=>{
+    items.innerHTML += `<div class='cart-item'><span>${item.name}</span><span>₹${item.price}</span></div>`;
+    total += item.price;
+  });
+  document.getElementById("total").innerText = total;
+}
+function payNow(){
+  window.location.href = "upi://pay?pa=8999827106@upi&pn=Lavender%20Bloom&cu=INR";
+}
 </script>
 
 </body>
