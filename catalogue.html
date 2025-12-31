@@ -4,6 +4,12 @@
   <title>Catalogue | Lavender Bloom Giftery</title>
   <style>
     body {
+      <div id="cart-box">
+  🛒 Cart: <span id="cart-count">0</span> items
+  <br><br>
+  <button class="btn" onclick="checkout()">Checkout</button>
+</div>
+
       font-family: Arial;
       background: #f9f5ff;
       margin: 0;
@@ -49,25 +55,37 @@
   <div class="product">
     <img src="bracelet.jpg">
     <p>Bracelet – ₹80</p>
-    <a class="btn" href="https://wa.me/918999827106">Order</a>
+    <button class="btn" onclick="addToCart('Flower Clip – ₹149')">
+  Add to Cart
+</button>
+
   </div>
 
   <div class="product">
     <img src="lipgloss.jpg">
     <p>Lip Gloss – ₹60</p>
-    <a class="btn" href="https://wa.me/918999827106">Order</a>
+    <button class="btn" onclick="addToCart('Flower Clip – ₹149')">
+  Add to Cart
+</button>
+
   </div>
 
   <div class="product">
     <img src="pendant.jpg">
     <p>Pendant – ₹50</p>
-    <a class="btn" href="https://wa.me/918999827106">Order</a>
+    <button class="btn" onclick="addToCart('Flower Clip – ₹149')">
+  Add to Cart
+</button>
+
   </div>
 
   <div class="product">
     <img src="scrunchie.jpg">
     <p>Scrunchie – ₹25</p>
-    <a class="btn" href="https://wa.me/918999827106">Order</a>
+    <button class="btn" onclick="addToCart('Flower Clip – ₹149')">
+  Add to Cart
+</button>
+
   </div>
 
 </div>
@@ -125,62 +143,114 @@
   <div class="product">
     <img src="flowerclip.jpg">
     <p>Flower clip – ₹20</p>
-    <a class="btn" href="https://wa.me/918999827106">Order</a>
+    <button class="btn" onclick="addToCart('Flower Clip – ₹149')">
+  Add to Cart
+</button>
+
   </div>
 
   <div class="product">
     <img src="flowerclaw.jpg">
     <p>Flower claw clip– ₹35</p>
-    <a class="btn" href="https://wa.me/918999827106">Order</a>
+    <button class="btn" onclick="addToCart('Flower Clip – ₹149')">
+  Add to Cart
+</button>
+
   </div>
 
   <div class="product">
     <img src="tulipbow.jpg">
     <p>Tulip bow – ₹45</p>
-    <a class="btn" href="https://wa.me/918999827106">Order</a>
+    <button class="btn" onclick="addToCart('Flower Clip – ₹149')">
+  Add to Cart
+</button>
+
   </div>
 
   <div class="product">
     <img src="flowerscrunchie.jpg">
     <p>Flower scrunchie – ₹40</p>
-    <a class="btn" href="https://wa.me/918999827106">Order</a>
+    <button class="btn" onclick="addToCart('Flower Clip – ₹149')">
+  Add to Cart
+</button>
+
   </div>
 
   <div class="product">
     <img src="tuliplace.jpg">
     <p>Tulip lace bow – ₹45</p>
-    <a class="btn" href="https://wa.me/918999827106">Order</a>
+    <button class="btn" onclick="addToCart('Flower Clip – ₹149')">
+  Add to Cart
+</button>
+
   </div>
   
   <div class="product">
     <img src="acrylic.jpg">
     <p>Acrylic flower clip – ₹35</p>
-    <a class="btn" href="https://wa.me/918999827106">Order</a>
+    <button class="btn" onclick="addToCart('Flower Clip – ₹149')">
+  Add to Cart
+</button>
+
   </div>
   
   <div class="product">
     <img src="blackstud.jpg">
     <p>Black stud – ₹35</p>
-    <a class="btn" href="https://wa.me/918999827106">Order</a>
+    <button class="btn" onclick="addToCart('Flower Clip – ₹149')">
+  Add to Cart
+</button>
+
   </div>
 
   <div class="product">
     <img src="cork.jpg">
     <p>Cork – ₹30</p>
-    <a class="btn" href="https://wa.me/918999827106">Order</a>
+    <button class="btn" onclick="addToCart('Flower Clip – ₹149')">
+  Add to Cart
+</button>
+
   </div>
 
   <div class="product">
     <img src="bowstud.jpg">
     <p>Bow stud – ₹30</p>
-    <a class="btn" href="https://wa.me/918999827106">Order</a>
+    <button class="btn" onclick="addToCart('Flower Clip – ₹149')">
+  Add to Cart
+</button>
+
   </div>
 
   <div class="product">
     <img src="charm.jpg">
     <p>Charm bracelet – ₹30</p>
-    <a class="btn" href="https://wa.me/918999827106">Order</a>
+    <button class="btn" onclick="addToCart('Flower Clip – ₹149')">
+  Add to Cart
+</button>
+
   </div>
-  
+  <script>
+let cart = [];
+
+function addToCart(item) {
+  cart.push(item);
+  document.getElementById("cart-count").innerText = cart.length;
+  alert(item + " added to cart 💜");
+}
+
+function checkout() {
+  let message = "Hello Lavender Bloom Giftery 🌸%0A%0AI want to order:%0A";
+  cart.forEach((item, index) => {
+    message += (index + 1) + ". " + item + "%0A";
+  });
+  message += "%0AThank you 💜";
+
+  window.open("https://wa.me/918999827106?text=" + message, "_blank");
+}
+</script>
+<a class="btn" href="upi://pay?pa=8999827106@upi&pn=Lavender Bloom Giftery&cu=INR">
+  Pay via UPI
+</a>
+
   </body>
   </html>
