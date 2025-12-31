@@ -1,235 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lavender Bloom Giftery</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: 'Poppins', Arial, sans-serif;
-  background: #f9f6fb;
-  color: #333;
-}
-
-/* NAVBAR */
-nav {
-  background: #fff;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-nav h2 { color: #8c6bb1; margin: 0; }
-nav a {
-  text-decoration: none;
-  color: #555;
-  margin-left: 15px;
-  font-weight: 500;
-}
-
-/* HERO */
-header {
-  text-align: center;
-  padding: 70px 20px;
-  background: linear-gradient(135deg,#e9dcf5,#ffffff);
-}
-header h1 { color: #8c6bb1; }
-header p { max-width: 500px; margin: auto; }
-
-/* PRODUCTS */
-section { padding: 40px 20px; }
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
-  gap: 20px;
-}
-.card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-.card img {
-  width: 100%;
-  border-radius: 12px;
-}
-.card h4 { margin: 10px 0 5px; font-size: 15px; }
-.card p { margin: 0; font-weight: bold; color: #8c6bb1; }
-.card button {
-  margin-top: 10px;
-  padding: 8px 14px;
-  border: none;
-  border-radius: 20px;
-  background: #b497d6;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* CART */
-#cart {
-  max-width: 500px;
-  margin: auto;
-}
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  margin: 8px 0;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #efe7f6;
-  font-size: 14px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lavender Bloom Giftery</title>
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffafc;
+      color: #333;
+    }
+    a { text-decoration: none; }
+    .hero {
+      background: url('images/hero.jpg') center/cover no-repeat;
+      text-align: center;
+      padding: 80px 20px;
+      color: #fff;
+    }
+    .hero h1 { font-size: 3em; margin-bottom: 10px; }
+    .hero p { font-size: 1.2em; margin-bottom: 20px; }
+    .btn {
+      background: #9b59b6;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    section { padding: 60px 20px; text-align: center; }
+    h2 { color: #9b59b6; margin-bottom: 40px; }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      width: 250px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .product-card:hover { transform: scale(1.05); }
+    .product-card img { width: 100%; border-radius: 10px; }
+    .product-card h4 { margin: 15px 0 5px; color: #9b59b6; }
+    .product-card p { margin: 5px 0; }
+    #instagram iframe { width: 100%; max-width: 500px; height: 500px; border: 0; }
+    #reviews p { font-style: italic; margin: 10px 0; }
+    footer {
+      background: #9b59b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .contact-btn {
+      background: #e91e63;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 10px;
+      display: inline-block;
+    }
+    @media (max-width: 600px){
+      .product-card { width: 90%; }
+    }
+  </style>
 </head>
-
 <body>
 
-<nav>
-<h2>Lavender Bloom</h2>
-<div>
-<a href="#home">Home</a>
-<a href="#catalogue">Catalogue</a>
-<a href="#cart">Cart</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Lavender Bloom Giftery</h1>
+    <p>Where gifts bloom with love 💜</p>
+    <a href="#products" class="btn">Shop Now</a>
+  </section>
 
-<header id="home">
-<h1>Lavender Bloom Giftery 🌸</h1>
-<p>Soft pastel gifts curated with love for every special moment.</p>
-</header>
-
-<section id="catalogue">
-<h2 style="text-align:center;color:#8c6bb1;">Our Catalogue</h2>
-
-<div class="products">
-
-<div class="card"><img src="charm.jpg"><h4>Charm Bracelet</h4><p>₹30</p><button onclick="addToCart('Charm Bracelet',30)">Add to Cart</button></div>
-<div class="card"><img src="flowerclaw.jpg"><h4>Flower Hair Claw</h4><p>₹20</p><button onclick="addToCart('Flower Hair Claw',20)">Add to Cart</button></div>
-<div class="card"><img src="flowerclip.jpg"><h4>Flower Hair Clip</h4><p>₹35</p><button onclick="addToCart('Flower Hair Clip',35)">Add to Cart</button></div>
-<div class="card"><img src="tuliplace.jpg"><h4>Tulip Lace Bow</h4><p>₹45</p><button onclick="addToCart('Tulip Lace Bow',45)">Add to Cart</button></div>
-<div class="card"><img src="tulipbow.jpg"><h4>Tulip Hair Bow</h4><p>₹45</p><button onclick="addToCart('Tulip Hair Bow',45)">Add to Cart</button></div>
-<div class="card"><img src="scrunchie.jpg"><h4>Scrunchie</h4><p>₹25</p><button onclick="addToCart('Scrunchie',25)">Add to Cart</button></div>
-<div class="card"><img src="cork.jpg"><h4>Cork Light</h4><p>₹30</p><button onclick="addToCart('Cork Light',30)">Add to Cart</button></div>
-<div class="card"><img src="blackstud.jpg"><h4>Black Stud Earrings</h4><p>₹35</p><button onclick="addToCart('Black Stud Earrings',35)">Add to Cart</button></div>
-<div class="card"><img src="pendant.jpg"><h4>Pendant + Earrings</h4><p>₹50</p><button onclick="addToCart('Pendant + Earrings',50)">Add to Cart</button></div>
-<div class="card"><img src="acrylic.jpg"><h4>Acrylic Flower Clip</h4><p>₹35</p><button onclick="addToCart('Acrylic Flower Clip',35)">Add to Cart</button></div>
-<div class="card"><img src="flowerscrunchie.jpg"><h4>Flower Scrunchie</h4><p>₹40</p><button onclick="addToCart('Flower Scrunchie',40)">Add to Cart</button></div>
-<div class="card"><img src="bowstud.jpg"><h4>Bow Stud Earrings</h4><p>₹30</p><button onclick="addToCart('Bow Stud Earrings',30)">Add to Cart</button></div>
-<div class="card"><img src="lipgloss.jpg"><h4>Lip Gloss</h4><p>₹60</p><button onclick="addToCart('Lip Gloss',60)">Add to Cart</button></div>
-<div class="card"><img src="bracelet.jpg"><h4>Bracelet</h4><p>₹80</p><button onclick="addToCart('Bracelet',80)">Add to Cart</button></div>
-
-</div>
-</section>
-
-<section id="cart">
-<h2 style="text-align:center;color:#8c6bb1;">Your Cart</h2>
-<div id="cartItems"></div>
-<h3 style="text-align:center;">Total: ₹<span id="total">0</span></h3>
-<div style="text-align:center;">
-<button onclick="payNow()" style="padding:10px 20px;border:none;border-radius:25px;background:#8c6bb1;color:white;">Pay Now</button>
-</div>
-</section>
-
-<section id="contact">
-<h2 style="text-align:center;color:#8c6bb1;">Contact</h2>
-<p style="text-align:center;">UPI Payment: <strong>8999827106</strong></p>
-</section>
-
-<footer>
-© 2025 Lavender Bloom Giftery 💜
-</footer>
-
-<script>
-let cart = [];
-function addToCart(name, price){
-  cart.push({name, price});
-  renderCart();
-}
-function renderCart(){
-  let items = document.getElementById("cartItems");
-  let total = 0;
-  items.innerHTML = "";
-  cart.forEach(item=>{
-    items.innerHTML += `<div class='cart-item'><span>${item.name}</span><span>₹${item.price}</span></div>`;
-    total += item.price;
-  });
-  document.getElementById("total").innerText = total;
-}
-function payNow(){
-  window.location.href = "upi://pay?pa=8999827106@upi&pn=Lavender%20Bloom&cu=INR";
-}
-</script>
-<!-- FLOATING BUTTONS -->
-<style>
-.floating-btn {
-  position: fixed;
-  right: 15px;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 26px;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 999;
-}
-.whatsapp {
-  bottom: 90px;
-  background: #25D366;
-}
-.instagram {
-  bottom: 20px;
-  background: #C13584;
-}
-</style>
-
-<a class="floating-btn whatsapp"
-   href="https://wa.me/918999827106?text=Hi%20Lavender%20Bloom%20Giftery%20💜%20I%20want%20to%20place%20an%20order"
-   target="_blank">💬</a>
-
-<a class="floating-btn instagram"
-   href="https://www.instagram.com/"
-   target="_blank">📷</a>
-Lavender Bloom Giftery
-Where gifts bloom with love 💜
-<section id="products">
-  <h2>Our Gifts</h2>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="images/birthday-hamper.jpg" alt="Birthday Hamper">
-      <h3>Birthday Hamper</h3>
-      <p>Sweet surprises for every special day.</p>
-      <p>Starting from ₹499</p>
+  <!-- Products Section -->
+  <section id="products">
+    <h2>Our Gifts</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/birthday-hamper.jpg" alt="Birthday Hamper">
+        <h4>Birthday Hamper</h4>
+        <p>₹499</p>
+      </div>
+      <div class="product-card">
+        <img src="images/selfcare-hamper.jpg" alt="Selfcare Hamper">
+        <h4>Selfcare Hamper</h4>
+        <p>₹399</p>
+      </div>
+      <div class="product-card">
+        <img src="images/anniversary-hamper.jpg" alt="Anniversary Hamper">
+        <h4>Anniversary Hamper</h4>
+        <p>₹599</p>
+      </div>
+      <div class="product-card">
+        <img src="images/custom-hamper.jpg" alt="Custom Hamper">
+        <h4>Custom Hamper</h4>
+        <p>Starting ₹699</p>
+      </div>
     </div>
-    <!-- Repeat for other products -->
-  </div>
-</section>
-<section id="instagram">
-  <h2>Follow Us on Instagram</h2>
-  <iframe src="YOUR_WIDGET_LINK" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-</section>
-<section id="reviews">
-  <h2>What Customers Say</h2>
-  <div class="review">
-    <p>"Loved the birthday hamper! Perfect gift for my sister. 💜"</p>
-    <span>- Ananya</span>
-  </div>
-</section>
+  </section>
+
+  <!-- Instagram Section -->
+  <section id="instagram">
+    <h2>Follow Us on Instagram</h2>
+    <!-- Replace YOUR_WIDGET_LINK with your Instagram widget embed code -->
+    <iframe src="YOUR_WIDGET_LINK" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews">
+    <h2>What Our Customers Say</h2>
+    <p>“Loved my gifts! Beautiful and delivered on time 💜” – Priya</p>
+    <p>“Amazing attention to detail! Highly recommended.” – Rhea</p>
+  </section>
+
+  <!-- Contact / Order Section -->
+  <section id="contact">
+    <h2>Contact & Order</h2>
+    <a href="https://wa.me/918999827106" class="contact-btn">Order on WhatsApp</a>
+    <a href="https://instagram.com/shruborude-dot" class="contact-btn">DM on Instagram</a>
+    <p>Customize your gift now 💌</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Lavender Bloom Giftery. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
