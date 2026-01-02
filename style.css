@@ -216,3 +216,62 @@ input[type="number"] {
   font-size: 14px;
   color: #666;
 }
+/* ===== LUXURY HOME HERO ===== */
+
+.luxury-hero {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(180deg, #faf4fb, #f3e6f6);
+}
+
+.brand-tag {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9b6aa3;
+  margin-bottom: 10px;
+}
+
+.luxury-hero h1 {
+  font-size: 36px;
+  line-height: 1.3;
+  color: #4b2354;
+  margin-bottom: 18px;
+}
+
+.brand-desc {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.luxury-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.lux-btn {
+  padding: 14px 30px;
+  border-radius: 40px;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.lux-btn.filled {
+  background: #6b3b6e;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(107, 59, 110, 0.25);
+}
+
+.lux-btn.filled:hover {
+  transform: translateY(-2px);
+}
+
+.lux-btn.outline {
+  border: 1.5px solid #6b3b6e;
+  color: #6b3b6e;
+  background: transparent;
+}
