@@ -23,26 +23,35 @@ function displayCart() {
   if (!cartItems) return;
 
   cartItems.innerHTML = "";
-  let total = 0;
+  let subtotal = 0;
 
   cart.forEach((item, index) => {
-    total += item.price * item.qty;
+    subtotal += item.price * item.qty;
 
     cartItems.innerHTML += `
       <div class="cart-item">
         <h4>${item.name}</h4>
         <p>₹${item.price}</p>
+
         <div class="qty">
           <button onclick="changeQty(${index}, -1)">−</button>
           <span>${item.qty}</span>
           <button onclick="changeQty(${index}, 1)">+</button>
         </div>
+
         <button class="remove" onclick="removeItem(${index})">Remove</button>
       </div>
     `;
   });
 
-  totalEl.innerText = "₹" + total;
+  let delivery = cart.length > 0 ? DELIVERY_CHARGE : 0;
+  let total = subtotal + delivery;
+
+  totalEl.innerHTML = `
+    Subtotal: ₹${subtotal}<br>
+    Delivery: ₹${delivery}<br>
+    <strong>Total: ₹${total}</strong>
+  `;
 }
 
 /* CHANGE QUANTITY */
@@ -72,16 +81,19 @@ function checkout() {
   }
 
   let message = "Hello, I want to place an order 🛍️\n\n";
-  let total = 0;
+  let subtotal = 0;
 
   cart.forEach(item => {
     message += `${item.name} × ${item.qty} = ₹${item.price * item.qty}\n`;
-    total += item.price * item.qty;
+    subtotal += item.price * item.qty;
   });
 
-  message += `\nTotal: ₹${total}`;
+  let total = subtotal + DELIVERY_CHARGE;
+
+  message += `\nSubtotal: ₹${subtotal}`;
+  message += `\nDelivery Charges: ₹${DELIVERY_CHARGE}`;
+  message += `\nTotal Amount: ₹${total}`;
 
   let url = "https://wa.me/918999827106?text=" + encodeURIComponent(message);
   window.open(url, "_blank");
 }
-
