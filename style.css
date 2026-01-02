@@ -71,6 +71,18 @@ footer {
   object-fit: cover;
   border-radius: 10px;
 }
+.cart-item {
+  background: white;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.cart-item button {
+  margin: 5px;
+  padding: 5px 10px;
+}
 
 .product button {
   background: #9c27b0;
