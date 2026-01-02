@@ -1,6 +1,6 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 const DELIVERY_CHARGE = 60; // change if needed
-
+const FREE_DELIVERY_LIMIT = 999;
 /* ADD TO CART */
 function addToCart(name, price) {
   let item = cart.find(p => p.name === name);
@@ -44,15 +44,19 @@ function displayCart() {
     `;
   });
 
-  let delivery = cart.length > 0 ? DELIVERY_CHARGE : 0;
+  let delivery = subtotal >= FREE_DELIVERY_LIMIT || subtotal === 0
+    ? 0
+    : DELIVERY_CHARGE;
+
   let total = subtotal + delivery;
 
   totalEl.innerHTML = `
     Subtotal: ₹${subtotal}<br>
-    Delivery: ₹${delivery}<br>
+    Delivery: ₹${delivery} ${delivery === 0 && subtotal >= FREE_DELIVERY_LIMIT ? "(Free above ₹999 🎉)" : ""}<br>
     <strong>Total: ₹${total}</strong>
   `;
 }
+
 
 /* CHANGE QUANTITY */
 function changeQty(index, change) {
@@ -88,10 +92,14 @@ function checkout() {
     subtotal += item.price * item.qty;
   });
 
-  let total = subtotal + DELIVERY_CHARGE;
+  let delivery = subtotal >= FREE_DELIVERY_LIMIT ? 0 : DELIVERY_CHARGE;
+  let total = subtotal + delivery;
 
   message += `\nSubtotal: ₹${subtotal}`;
-  message += `\nDelivery Charges: ₹${DELIVERY_CHARGE}`;
+  message += `\nDelivery Charges: ₹${delivery}`;
+  if (delivery === 0) {
+    message += " (Free Delivery 🎉)";
+  }
   message += `\nTotal Amount: ₹${total}`;
 
   let url = "https://wa.me/918999827106?text=" + encodeURIComponent(message);
