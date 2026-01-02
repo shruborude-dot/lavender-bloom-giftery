@@ -386,3 +386,76 @@ input[type="number"] {
   border-bottom: 1px solid #fff;
   font-size: 14px;
 }
+/* HERO SECTION */
+.hero {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 450px;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  font-family: 'Playfair Display', serif;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+.shop-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #e6b7c8;
+  color: #4b2e39;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+/* CATEGORY CARDS */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 60px 30px;
+}
+
+.category-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+}
+
+.category-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.category-card h3 {
+  text-align: center;
+  padding: 15px;
+  background: #fff;
+  font-size: 20px;
+}
