@@ -1,5 +1,5 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-const DELIVERY_CHARGE = 50; // change if needed
+const DELIVERY_CHARGE = 60; // change if needed
 
 /* ADD TO CART */
 function addToCart(name, price) {
