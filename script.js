@@ -1,7 +1,9 @@
-function addToCart(name, price) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+/* ADD TO CART */
+function addToCart(name, price) {
   let item = cart.find(p => p.name === name);
+
   if (item) {
     item.qty += 1;
   } else {
@@ -9,64 +11,76 @@ function addToCart(name, price) {
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
-  alert(name + " added to cart 🛒");
+  alert("Added to cart 💜");
 }
 
-const DELIVERY_CHARGE = 70;
+/* DISPLAY CART */
+function displayCart() {
+  let cartItems = document.getElementById("cart-items");
+  let totalEl = document.getElementById("total");
 
-function loadCart() {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let container = document.getElementById("cart-items");
+  if (!cartItems) return;
+
+  cartItems.innerHTML = "";
   let total = 0;
-
-  if (!container) return;
-  container.innerHTML = "";
 
   cart.forEach((item, index) => {
     total += item.price * item.qty;
 
-    container.innerHTML += `
+    cartItems.innerHTML += `
       <div class="cart-item">
-        <h3>${item.name}</h3>
+        <h4>${item.name}</h4>
         <p>₹${item.price}</p>
-
-        <button onclick="changeQty(${index}, -1)">−</button>
-        <span>${item.qty}</span>
-        <button onclick="changeQty(${index}, 1)">+</button>
-
-        <button onclick="removeItem(${index})">❌</button>
+        <div class="qty">
+          <button onclick="changeQty(${index}, -1)">−</button>
+          <span>${item.qty}</span>
+          <button onclick="changeQty(${index}, 1)">+</button>
+        </div>
+        <button class="remove" onclick="removeItem(${index})">Remove</button>
       </div>
     `;
   });
 
-  let grandTotal = total + (cart.length > 0 ? DELIVERY_CHARGE : 0);
-
-  document.getElementById("total").innerHTML = `
-    Subtotal: ₹${total}<br>
-    Delivery: ₹${cart.length > 0 ? DELIVERY_CHARGE : 0}<br>
-    <strong>Total: ₹${grandTotal}</strong>
-  `;
+  totalEl.innerText = "₹" + total;
 }
 
+/* CHANGE QUANTITY */
+function changeQty(index, change) {
+  cart[index].qty += change;
+
+  if (cart[index].qty <= 0) {
+    cart.splice(index, 1);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  displayCart();
+}
+
+/* REMOVE ITEM */
+function removeItem(index) {
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  displayCart();
+}
+
+/* WHATSAPP CHECKOUT */
 function checkout() {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let message = "Hello, I want to order:\n\n";
-  let subtotal = 0;
+  if (cart.length === 0) {
+    alert("Cart is empty 💜");
+    return;
+  }
+
+  let message = "Hello, I want to place an order 🛍️\n\n";
+  let total = 0;
 
   cart.forEach(item => {
     message += `${item.name} × ${item.qty} = ₹${item.price * item.qty}\n`;
-    subtotal += item.price * item.qty;
+    total += item.price * item.qty;
   });
 
-  let total = subtotal + DELIVERY_CHARGE;
-
-  message += `\nSubtotal: ₹${subtotal}`;
-  message += `\nDelivery: ₹${DELIVERY_CHARGE}`;
   message += `\nTotal: ₹${total}`;
 
   let url = "https://wa.me/918999827106?text=" + encodeURIComponent(message);
   window.open(url, "_blank");
 }
 
-
-document.addEventListener("DOMContentLoaded", loadCart);
