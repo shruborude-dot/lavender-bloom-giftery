@@ -58,21 +58,23 @@
 
 <script>
 function orderHamper() {
+
   let items = [
-    { name: "Satin Scrunchie", price: 25, qty: scrunchie.value },
-    { name: "Cute Lip Gloss", price: 60, qty: lipgloss.value },
-    { name: "Charm Bracelet", price: 35, qty: bracelet.value },
-    { name: "Flower Hair Clip", price: 20, qty: flowerclip.value },
-    { name: "Tulip Bow", price: 45, qty: tulipbow.value }
+    { name: "Satin Scrunchie", price: 25, qty: document.getElementById("scrunchie").value },
+    { name: "Cute Lip Gloss", price: 60, qty: document.getElementById("lipgloss").value },
+    { name: "Charm Bracelet", price: 35, qty: document.getElementById("bracelet").value },
+    { name: "Flower Hair Clip", price: 20, qty: document.getElementById("flowerclip").value },
+    { name: "Tulip Bow", price: 45, qty: document.getElementById("tulipbow").value }
   ];
 
   let message = "Hello, I want to build a custom hamper 🎁\n\n";
   let total = 0;
 
   items.forEach(item => {
-    if (item.qty > 0) {
-      message += `${item.name} × ${item.qty} = ₹${item.price * item.qty}\n`;
-      total += item.price * item.qty;
+    let qty = parseInt(item.qty);
+    if (qty > 0) {
+      message += `${item.name} × ${qty} = ₹${item.price * qty}\n`;
+      total += item.price * qty;
     }
   });
 
@@ -87,6 +89,3 @@ function orderHamper() {
   window.open(url, "_blank");
 }
 </script>
-
-</body>
-</html>
