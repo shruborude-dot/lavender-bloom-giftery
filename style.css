@@ -275,3 +275,66 @@ input[type="number"] {
   color: #6b3b6e;
   background: transparent;
 }
+/* ===== PREMIUM LUXURY HERO ===== */
+.hero-wrap {
+  background: url('hero-bg.jpg') center/cover no-repeat;
+  padding: 120px 20px;
+  text-align: center;
+  color: #fdfdfd;
+}
+
+.hero-wrap::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(75, 32, 73, 0.45);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: auto;
+}
+
+.hero-wrap h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-wrap p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.hero-buttons .btn {
+  padding: 14px 28px;
+  margin: 8px;
+  border-radius: 30px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.shop-now {
+  background-color: #6f3f7c;
+  color: #fff;
+}
+
+.view-cart {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+/* Smooth hover */
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
