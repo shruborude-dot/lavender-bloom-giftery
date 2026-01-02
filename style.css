@@ -1,0 +1,48 @@
+body {
+  font-family: Poppins, Arial;
+  margin: 0;
+  background: #faf5ff;
+  text-align: center;
+}
+
+header {
+  background: #c8a2c8;
+  padding: 20px;
+  color: white;
+}
+
+nav {
+  background: #f1e6f6;
+  padding: 10px;
+}
+
+nav a {
+  margin: 10px;
+  text-decoration: none;
+  color: #6a1b9a;
+  font-weight: bold;
+}
+
+.hero {
+  padding: 30px;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  background: #9c27b0;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.whatsapp {
+  background: #25d366;
+}
+
+footer {
+  background: #eee;
+  padding: 15px;
+  margin-top: 30px;
+}
