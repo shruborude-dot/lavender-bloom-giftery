@@ -46,3 +46,31 @@ footer {
   padding: 15px;
   margin-top: 30px;
 }
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  background: white;
+  width: 220px;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product button {
+  background: #9c27b0;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
