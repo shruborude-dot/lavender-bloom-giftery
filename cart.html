@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cart | Lavender Bloom Giftery</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -19,16 +19,22 @@
 
 <div class="cart-container" id="cart-items"></div>
 
-<h2 id="total"></h2>
+<h2>Total: <span id="total">₹0</span></h2>
 
 <button class="btn whatsapp" onclick="checkout()">Checkout on WhatsApp</button>
+
 <a class="btn" href="upi://pay?pa=shrutiborude143@okhdfcbank&pn=Lavender%20Bloom%20Giftery">
   Pay via UPI
 </a>
+
 <p>
 After payment, please send screenshot on WhatsApp to confirm your order 💜
 </p>
 
 <script src="script.js"></script>
+<script>
+  displayCart();
+</script>
+
 </body>
 </html>
