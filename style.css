@@ -175,3 +175,23 @@ body {
 section {
   padding: 80px 8%;
 }
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .categories {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+}
