@@ -618,3 +618,22 @@ input[type="number"] {
   background: #fff;
   transform: scale(1.03);
 }
+/* ===== EXTRA BRIGHT HERO TEXT ===== */
+.hero-text {
+  color: #ffffff !important;   /* pure white */
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.9),
+    0 4px 14px rgba(0,0,0,0.8);
+}
+
+.hero-text h1 {
+  color: #ffffff !important;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.hero-text p {
+  color: #ffffff !important;
+  opacity: 1;
+  font-weight: 500;
+}
