@@ -195,3 +195,79 @@ body {
     padding: 60px 20px;
   }
 }
+/* ===== CATALOGUE ===== */
+
+.catalogue-header {
+  text-align: center;
+  padding: 50px 20px;
+  background: #faf4fb;
+}
+
+.catalogue-header h1 {
+  font-size: 34px;
+  color: #4b2354;
+}
+
+.catalogue-header p {
+  color: #777;
+}
+
+.catalogue-section {
+  padding: 50px 20px;
+}
+
+.catalogue-section h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #6b3b6e;
+  text-align: center;
+}
+
+.catalogue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.catalogue-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  padding-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.catalogue-card:hover {
+  transform: translateY(-6px);
+}
+
+.catalogue-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.catalogue-card h3 {
+  margin: 15px 0 5px;
+  font-size: 18px;
+}
+
+.catalogue-card p {
+  font-weight: bold;
+  color: #7b1fa2;
+  margin-bottom: 10px;
+}
+
+.wa-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 14px;
+}
