@@ -8,89 +8,87 @@
 </head>
 <body>
 
-<!-- HERO SECTION -->
-<section class="hero luxury-hero">
-  <div class="hero-overlay"></div>
+<!-- HERO -->
+<section class="hero">
   <img src="hero.jpg" alt="Lavender Bloom Giftery">
-
+  <div class="hero-overlay"></div>
   <div class="hero-text">
     <h1>Elegant Gifts for Every Moment</h1>
-    <p>Curated accessories & gift essentials wrapped with love</p>
-    <a href="cart.html" class="shop-btn">View Cart</a>
+    <p>Handpicked accessories & gift essentials wrapped with love</p>
+    <a href="catalogue.html" class="btn-primary">Shop Collection</a>
   </div>
 </section>
 
 <!-- BRAND INTRO -->
-<section class="brand-intro">
-  <h2>🌸 Lavender Bloom Giftery</h2>
-  <p>Thoughtful gifting, minimal aesthetics & premium feel</p>
+<section class="brand">
+  <h2>Lavender Bloom Giftery</h2>
+  <p>Thoughtfully curated gifts made to feel special ✨</p>
 </section>
 
-<!-- COLLECTION GRID -->
-<section class="collections">
+<!-- COLLECTIONS (HORIZONTAL) -->
+<section class="section">
+  <h3 class="section-title">Shop by Collection</h3>
 
-  <h2 class="section-title">Our Collections</h2>
-
-  <div class="collection-grid">
-
+  <div class="scroll-row">
     <div class="collection-card">
-      <img src="accessories.jpg" alt="Accessories">
-      <div class="collection-text">
-        <h3>Accessories</h3>
-        <p>Bracelets, earrings & cute add-ons</p>
-      </div>
+      <img src="accessories.jpg">
+      <span>Accessories</span>
     </div>
 
     <div class="collection-card">
-      <img src="gifts.jpg" alt="Gift Essentials">
-      <div class="collection-text">
-        <h3>Gift Essentials</h3>
-        <p>Perfect picks for every occasion</p>
-      </div>
+      <img src="gifts.jpg">
+      <span>Gift Essentials</span>
     </div>
 
     <div class="collection-card">
-      <img src="under999.jpg" alt="Under 999">
-      <div class="collection-text">
-        <h3>Under ₹999</h3>
-        <p>Affordable & beautiful gifting</p>
-      </div>
+      <img src="under999.jpg">
+      <span>Under ₹999</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS (HORIZONTAL) -->
+<section class="section soft-bg">
+  <h3 class="section-title">Featured Picks</h3>
+
+  <div class="scroll-row">
+    <div class="product-card">
+      <img src="scrunchie.jpg">
+      <h4>Satin Scrunchie</h4>
+      <p>₹25</p>
+      <button onclick="addToCart('Satin Scrunchie',25)">Add to Cart</button>
     </div>
 
+    <div class="product-card">
+      <img src="lipgloss.jpg">
+      <h4>Cute Lip Gloss</h4>
+      <p>₹60</p>
+      <button onclick="addToCart('Cute Lip Gloss',60)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="bracelet.jpg">
+      <h4>Charm Bracelet</h4>
+      <p>₹35</p>
+      <button onclick="addToCart('Charm Bracelet',35)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="tulipbow.jpg">
+      <h4>Tulip Bow</h4>
+      <p>₹45</p>
+      <button onclick="addToCart('Tulip Bow',45)">Add to Cart</button>
+    </div>
   </div>
 </section>
 
 <!-- FEATURES -->
-<section class="features luxury-features">
-
-  <div class="feature-card">
-    🎁
-    <h3>Perfect for Gifting</h3>
-    <p>Birthdays, surprises & self-love treats</p>
-  </div>
-
-  <div class="feature-card">
-    🚚
-    <h3>Fast Delivery</h3>
-    <p>Free delivery above ₹999</p>
-  </div>
-
-  <div class="feature-card">
-    💬
-    <h3>Easy Ordering</h3>
-    <p>Order easily via WhatsApp</p>
-  </div>
-
+<section class="features">
+  <div class="feature">🎁<h4>Perfect for Gifting</h4><p>Beautiful & thoughtful</p></div>
+  <div class="feature">🚚<h4>Free Delivery</h4><p>Above ₹999</p></div>
+  <div class="feature">💬<h4>Easy Order</h4><p>Via WhatsApp</p></div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <p>© 2026 Lavender Bloom Giftery</p>
-  <p>
-    <a href="https://instagram.com/lavender_bloom_giftery" target="_blank">Instagram</a> |
-    <a href="https://wa.me/918999827106" target="_blank">WhatsApp</a>
-  </p>
-</footer>
-
+<script src="script.js"></script>
 </body>
 </html>
