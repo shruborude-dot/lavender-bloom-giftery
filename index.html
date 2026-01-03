@@ -1,158 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Lavender Bloom Giftery</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Lavender Bloom Giftery</h1>
-  <button class="cart-btn" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">Lavender Bloom Giftery</div>
+  <div class="icons">
+    <a href="https://instagram.com/lavender_bloom_giftery" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/918999827106" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <div class="cart-icon" onclick="toggleCart()">
+      <i class="fa fa-shopping-bag"></i>
+      <span id="cartCount">0</span>
+    </div>
+  </div>
 </header>
 
-<main class="product-list">
-
-  <!-- Product Card -->
-  <div class="product">
-    <img src="images/purple.jpg" />
-    <h3>Purple floral hamper box (1pcs)</h3>
-    <p>₹120.00</p>
-    <button onclick="addToCart('Purple floral hamper box (1pcs)',120)">Add to Cart</button>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Luxury Gifts, Made With Love</h1>
+    <p>Elegant accessories & gift essentials</p>
+    <a href="#products" class="hero-btn">Shop Now</a>
   </div>
+</section>
 
-  <div class="product">
-    <img src="images/bowstud.jpg" />
-    <h3>Bow stud earrings (1 pcs)</h3>
-    <p>₹35.00</p>
-    <button onclick="addToCart('Bow stud earrings (1 pcs)',35)">Add to Cart</button>
-  </div>
+<!-- PRODUCTS -->
+<section id="products" class="products">
 
-  <div class="product">
-    <img src="images/charm.jpg" />
-    <h3>Charm bracelet (1 pcs)</h3>
-    <p>₹35.00</p>
-    <button onclick="addToCart('Charm bracelet (1 pcs)',35)">Add to Cart</button>
-  </div>
+<!-- PRODUCT TEMPLATE -->
+<!-- COPY STRUCTURE, CHANGE NAME + PRICE + IMAGE -->
 
-  <div class="product">
-    <img src="images/lacebow.jpg" />
-    <h3>Tulip lace bow (1 pcs)</h3>
-    <p>₹45.00</p>
-    <button onclick="addToCart('Tulip lace bow (1 pcs)',45)">Add to Cart</button>
-  </div>
+<script>
+const productData = [
+  ["Scrunchie",25,"scrunchie.jpg"],
+  ["Flower Hair Claw",20,"flowerclip.jpg"],
+  ["Cork Light",30,"cork.jpg"],
+  ["Bow Stud Earrings",35,"bowstud.jpg"],
+  ["Charm Bracelet",35,"charm.jpg"],
+  ["Acrylic Flower Clip",35,"acrylic.jpg"],
+  ["Flower Hair Claw Clip",35,"flowerclaw.jpg"],
+  ["Flower Scrunchie",40,"flowerscrunchie.jpg"],
+  ["Tulip Lace Bow",45,"lacebow.jpg"],
+  ["Tulip Hair Bow",45,"tulipbow.jpg"],
+  ["Pendant + Earrings",50,"pendant.jpg"],
+  ["Lip Gloss",60,"lipgloss.jpg"],
+  ["Bracelet",80,"bracelet.jpg"],
+  ["Small Hamper Box",40,"pink.jpg"],
+  ["Purple Floral Hamper Box",120,"purple.jpg"],
+  ["Lavender Gift Box",200,"lavender.jpg"],
+  ["Pastel Bloom Hamper",199,"199hamper.jpg"]
+];
+</script>
 
-  <div class="product">
-    <img src="images/tulipbow.jpg" />
-    <h3>Tulip hair bow (1 pcs)</h3>
-    <p>₹45.00</p>
-    <button onclick="addToCart('Tulip hair bow (1 pcs)',45)">Add to Cart</button>
-  </div>
+</section>
 
-  <div class="product">
-    <img src="images/199hamper.jpg" />
-    <h3>Pastel Bloom Hamper</h3>
-    <p>₹199.00</p>
-    <button onclick="addToCart('Pastel Bloom Hamper',199)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="images/lavender.jpg" />
-    <h3>Lavender gift box with ribbon (1pcs)</h3>
-    <p>₹200.00</p>
-    <button onclick="addToCart('Lavender gift box with ribbon (1pcs)',200)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="images/pink.jpg" />
-    <h3>Small hamper box (1pcs)</h3>
-    <p>₹40.00</p>
-    <button onclick="addToCart('Small hamper box (1pcs)',40)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="images/cork.jpg" />
-    <h3>Cork light (1pcs)</h3>
-    <p>₹30.00</p>
-    <button onclick="addToCart('Cork light (1pcs)',30)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="images/blackstud.jpg" />
-    <h3>Black stud earrings</h3>
-    <p>₹35.00</p>
-    <button onclick="addToCart('Black stud earrings',35)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="images/pendant.jpg" />
-    <h3>Pendant + earrings (1pcs)</h3>
-    <p>₹50.00</p>
-    <button onclick="addToCart('Pendant + earrings (1pcs)',50)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="images/acrylic.jpg" />
-    <h3>Acrylic flower clip (1pcs)</h3>
-    <p>₹35.00</p>
-    <button onclick="addToCart('Acrylic flower clip (1pcs)',35)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="images/flowerscrunchie.jpg" />
-    <h3>Flower scrunchie (1 pcs)</h3>
-    <p>₹40.00</p>
-    <button onclick="addToCart('Flower scrunchie (1 pcs)',40)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="images/lipgloss.jpg" />
-    <h3>Lip gloss (1 pcs)</h3>
-    <p>₹60.00</p>
-    <button onclick="addToCart('Lip gloss (1 pcs)',60)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="images/bracelet.jpg" />
-    <h3>Bracelet (1 pcs)</h3>
-    <p>₹80.00</p>
-    <button onclick="addToCart('Bracelet (1 pcs)',80)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="images/flowerclip.jpg" />
-    <h3>Flower hair claw (1 pcs)</h3>
-    <p>₹20.00</p>
-    <button onclick="addToCart('Flower hair claw (1 pcs)',20)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="images/flowerclaw.jpg" />
-    <h3>Flower hair claw clip (1 pcs)</h3>
-    <p>₹35.00</p>
-    <button onclick="addToCart('Flower hair claw clip (1 pcs)',35)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="images/scrunchie.jpg" />
-    <h3>Scrunchie (1 pcs)</h3>
-    <p>₹25.00</p>
-    <button onclick="addToCart('Scrunchie (1 pcs)',25)">Add to Cart</button>
-  </div>
-
-</main>
-
-<!-- Cart -->
+<!-- CART -->
 <div class="cart" id="cart">
   <h2>Your Cart</h2>
-  <ul id="cart-items"></ul>
-  <p>Total: ₹<span id="total">0</span></p>
-  <a id="whatsapp-btn" target="_blank">Checkout on WhatsApp</a>
+  <div id="cartItems"></div>
+
+  <div class="summary">
+    <p>Subtotal: ₹<span id="subtotal">0</span></p>
+    <p>Shipping: ₹<span id="shipping">0</span></p>
+    <h3>Total: ₹<span id="total">0</span></h3>
+    <p class="note">Free delivery above ₹999</p>
+  </div>
 </div>
 
 <script src="script.js"></script>
+
+<script>
+const container = document.querySelector(".products");
+
+productData.forEach(p => {
+  container.innerHTML += `
+  <div class="product">
+    <img src="images/${p[2]}">
+    <h3>${p[0]}</h3>
+    <p class="price">₹${p[1]}</p>
+
+    <div class="qty">
+      <button onclick="qtyChange(this,-1)">−</button>
+      <span>1</span>
+      <button onclick="qtyChange(this,1)">+</button>
+    </div>
+
+    <button class="add-btn" onclick="addToCart('${p[0]}',${p[1]},this)">Add to Cart</button>
+  </div>`;
+});
+</script>
+
 </body>
 </html>
