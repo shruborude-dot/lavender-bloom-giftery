@@ -1,76 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lavender Bloom Giftery</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="hero.jpg" alt="Lavender Bloom Giftery">
-  <div class="hero-overlay"></div>
-  <div class="hero-text">
-    <h1>Elegant Gifts for Every Moment</h1>
-    <p>Handpicked accessories & gift essentials wrapped with love</p>
-    <a href="catalogue.html" class="btn-primary">Shop Collection</a>
+<header>
+  <h1>Lavender Bloom Giftery</h1>
+  <button class="cart-btn" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+</header>
+
+<main class="product-list">
+
+  <!-- Product Card -->
+  <div class="product">
+    <img src="images/purple.jpg" />
+    <h3>Purple floral hamper box (1pcs)</h3>
+    <p>₹120.00</p>
+    <button onclick="addToCart('Purple floral hamper box (1pcs)',120)">Add to Cart</button>
   </div>
-</section>
 
-<!-- BRAND INTRO -->
-<section class="brand">
-  <h2>Lavender Bloom Giftery</h2>
-  <p>Thoughtfully curated gifts made to feel special ✨</p>
-</section>
-
-<!-- COLLECTIONS (HORIZONTAL) -->
-<section class="section">
-  <h3 class="section-title">Shop by Collection</h3>
-
-  <div class="scroll-row">
-    <div class="collection-card">
-      <img src="accessories.jpg">
-      <span>Accessories</span>
-    </div>
-
-    <div class="collection-card">
-      <img src="gifts.jpg">
-      <span>Gift Essentials</span>
-    </div>
-
-    <div class="collection-card">
-      <img src="under999.jpg">
-      <span>Under ₹999</span>
-    </div>
+  <div class="product">
+    <img src="images/bowstud.jpg" />
+    <h3>Bow stud earrings (1 pcs)</h3>
+    <p>₹35.00</p>
+    <button onclick="addToCart('Bow stud earrings (1 pcs)',35)">Add to Cart</button>
   </div>
-</section>
 
-<!-- FEATURES -->
-<section class="features">
-  <div class="feature">🎁<h4>Perfect for Gifting</h4><p>Beautiful & thoughtful</p></div>
-  <div class="feature">🚚<h4>Free Delivery</h4><p>Above ₹999</p></div>
-  <div class="feature">💬<h4>Easy Order</h4><p>Via WhatsApp</p></div>
-</section>
+  <div class="product">
+    <img src="images/charm.jpg" />
+    <h3>Charm bracelet (1 pcs)</h3>
+    <p>₹35.00</p>
+    <button onclick="addToCart('Charm bracelet (1 pcs)',35)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/lacebow.jpg" />
+    <h3>Tulip lace bow (1 pcs)</h3>
+    <p>₹45.00</p>
+    <button onclick="addToCart('Tulip lace bow (1 pcs)',45)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/tulipbow.jpg" />
+    <h3>Tulip hair bow (1 pcs)</h3>
+    <p>₹45.00</p>
+    <button onclick="addToCart('Tulip hair bow (1 pcs)',45)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/199hamper.jpg" />
+    <h3>Pastel Bloom Hamper</h3>
+    <p>₹199.00</p>
+    <button onclick="addToCart('Pastel Bloom Hamper',199)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/lavender.jpg" />
+    <h3>Lavender gift box with ribbon (1pcs)</h3>
+    <p>₹200.00</p>
+    <button onclick="addToCart('Lavender gift box with ribbon (1pcs)',200)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/pink.jpg" />
+    <h3>Small hamper box (1pcs)</h3>
+    <p>₹40.00</p>
+    <button onclick="addToCart('Small hamper box (1pcs)',40)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/cork.jpg" />
+    <h3>Cork light (1pcs)</h3>
+    <p>₹30.00</p>
+    <button onclick="addToCart('Cork light (1pcs)',30)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/blackstud.jpg" />
+    <h3>Black stud earrings</h3>
+    <p>₹35.00</p>
+    <button onclick="addToCart('Black stud earrings',35)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/pendant.jpg" />
+    <h3>Pendant + earrings (1pcs)</h3>
+    <p>₹50.00</p>
+    <button onclick="addToCart('Pendant + earrings (1pcs)',50)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/acrylic.jpg" />
+    <h3>Acrylic flower clip (1pcs)</h3>
+    <p>₹35.00</p>
+    <button onclick="addToCart('Acrylic flower clip (1pcs)',35)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/flowerscrunchie.jpg" />
+    <h3>Flower scrunchie (1 pcs)</h3>
+    <p>₹40.00</p>
+    <button onclick="addToCart('Flower scrunchie (1 pcs)',40)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/lipgloss.jpg" />
+    <h3>Lip gloss (1 pcs)</h3>
+    <p>₹60.00</p>
+    <button onclick="addToCart('Lip gloss (1 pcs)',60)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/bracelet.jpg" />
+    <h3>Bracelet (1 pcs)</h3>
+    <p>₹80.00</p>
+    <button onclick="addToCart('Bracelet (1 pcs)',80)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/flowerclip.jpg" />
+    <h3>Flower hair claw (1 pcs)</h3>
+    <p>₹20.00</p>
+    <button onclick="addToCart('Flower hair claw (1 pcs)',20)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/flowerclaw.jpg" />
+    <h3>Flower hair claw clip (1 pcs)</h3>
+    <p>₹35.00</p>
+    <button onclick="addToCart('Flower hair claw clip (1 pcs)',35)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="images/scrunchie.jpg" />
+    <h3>Scrunchie (1 pcs)</h3>
+    <p>₹25.00</p>
+    <button onclick="addToCart('Scrunchie (1 pcs)',25)">Add to Cart</button>
+  </div>
+
+</main>
+
+<!-- Cart -->
+<div class="cart" id="cart">
+  <h2>Your Cart</h2>
+  <ul id="cart-items"></ul>
+  <p>Total: ₹<span id="total">0</span></p>
+  <a id="whatsapp-btn" target="_blank">Checkout on WhatsApp</a>
+</div>
 
 <script src="script.js"></script>
-  <footer class="footer">
-  <h2>🌸 Lavender Bloom Giftery</h2>
-  <p>Where gifts bloom with love 💜</p>
-
-  <div class="footer-links">
-    <a href="https://www.instagram.com/lavender_bloom_giftery" target="_blank">
-      Instagram
-    </a>
-    <a href="https://wa.me/918999827106" target="_blank">
-      WhatsApp Order
-    </a>
-  </div>
-
-  <p class="footer-note">🚚 Free delivery above ₹999</p>
-</footer>
-
 </body>
 </html>
