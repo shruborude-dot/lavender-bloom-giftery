@@ -23,7 +23,7 @@ function updateCart() {
   message += `Total: ₹${total}`;
 
   document.getElementById("whatsapp-btn").href =
-    "https://wa.me/91XXXXXXXXXX?text=" + encodeURIComponent(message);
+    "https://wa.me/918999827106?text=" + encodeURIComponent(message);
 }
 
 function toggleCart() {
