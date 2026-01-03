@@ -566,3 +566,55 @@ input[type="number"] {
   font-weight: 600;
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
+/* ===== HERO TEXT VISIBLE FIX ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(45%);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  color: #ffffff;
+  padding: 0 20px;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
+
+.hero-text h1 {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.shop-btn {
+  padding: 14px 30px;
+  background: rgba(255,255,255,0.85);
+  color: #4b2c51;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.shop-btn:hover {
+  background: #fff;
+  transform: scale(1.03);
+}
